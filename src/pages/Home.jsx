@@ -21,6 +21,7 @@ export default function Home({ searchValue }) {
             setIsLoading(true)
             axios.get(`https://62a7fff5a89585c1770ab3a4.mockapi.io/pizzas?category=${category}&sortBy=${activeSort.sortType}&order=${activeSort.ascending}`).then(res => {
                 setPizzaList(res.data)
+                setIsLoading(false)
             })
 
         } catch (error) {

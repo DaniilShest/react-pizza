@@ -35,7 +35,7 @@ export default function Home({ searchValue }) {
 
     return (
         <>
-            <Sort setIsLoading={setIsLoading} />
+            <Sort />
             <h1 className="title">Все пиццы</h1>
             {isLoading
                 ?

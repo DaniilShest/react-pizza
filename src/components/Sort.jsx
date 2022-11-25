@@ -5,8 +5,8 @@ import { setAtiveCategory, setActiveSort } from "../redux/slices/sortSlice";
 const sortTypes = [
     { name: 'популярности (по убыванию)', sortType: 'rating', ascending: 'desc' },
     { name: 'популярности (по возрастанию)', sortType: 'rating', ascending: 'asc' },
-    { name: 'цене (по убыванию)', sortType: 'price', ascending: 'desc' },
-    { name: 'цене (по возрастанию)', sortType: 'price', ascending: 'asc' }
+    { name: 'цене (по убыванию)', sortType: 'prices', ascending: 'desc' },
+    { name: 'цене (по возрастанию)', sortType: 'prices', ascending: 'asc' }
 ]
 
 const categories = ['Все', 'Мясные', 'Вегетерианские', 'Острые']

@@ -5,6 +5,12 @@ import { addItem } from "../redux/slices/cartSlice";
 export default function Pizza({ pizzaItem }) {
     const [activeSize, setActiveSize] = React.useState(0)
     const [activeType, setActiveType] = React.useState(0)
+    const [activePrice, setActivePrice] = React.useState(0)
+
+    const changeSize = (sizeIndex) => {
+        setActiveSize(sizeIndex)
+        setActivePrice(sizeIndex)
+    }
 
     const typesName = ['Тонкое', 'Традиционное']
 
@@ -14,7 +20,7 @@ export default function Pizza({ pizzaItem }) {
         const item = {
             id: pizzaItem.id,
             name: pizzaItem.name,
-            price: pizzaItem.price,
+            price: pizzaItem.prices[activePrice],
             img: pizzaItem.imgURL,
             type: typesName[activeType],
             size: pizzaItem.sizes[activeSize]
@@ -40,14 +46,14 @@ export default function Pizza({ pizzaItem }) {
                     {pizzaItem.sizes.map((size, i) => (
                         <div
                             key={size}
-                            onClick={() => setActiveSize(i)}
+                            onClick={() => changeSize(i)}
                             className={activeSize === i ? 'card__size active' : 'card__size'}
                         >{size} см.</div>
                     ))}
                 </div>
             </div>
             <div className="card__bottom">
-                <div className="card__price">{pizzaItem.price} ₽</div>
+                <div className="card__price">{pizzaItem.prices[activePrice]} ₽</div>
                 <div onClick={onClickAdd} className="card__add">+ Добавить </div>
             </div>
         </div >

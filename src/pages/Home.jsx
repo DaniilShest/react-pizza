@@ -7,7 +7,7 @@ import Sort from "../components/Sort";
 import PizzaList from "../components/PizzaList";
 import MyLoader from "../components/MyLoader";
 
-export default function Home({ searchValue }) {
+export default function Home() {
 
     const [isLoading, setIsLoading] = React.useState(true)
     const [pizzaList, setPizzaList] = React.useState([])

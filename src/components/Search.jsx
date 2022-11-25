@@ -25,7 +25,11 @@ export default function Search() {
                 onChange={e => dispatch(setSearchValue(e.target.value))}
                 value={searchValue}
             />
-            <img onClick={onClickClose} src={require('../img/header/close.png')} alt="" className="search__img-close" />
+            {searchValue
+                ?
+                <img onClick={onClickClose} src={require('../img/header/close.png')} alt="" className="search__img-close" />
+                :
+                <></>}
         </div>
     )
 }
